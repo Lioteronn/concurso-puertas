@@ -50,3 +50,9 @@ function prevSlide() {
     currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
     showSlide(currentIndex);
 }
+
+window.onload = function() {
+    document.getElementById("audio-one").load();
+    document.getElementById("audio-one").play();
+
+}
