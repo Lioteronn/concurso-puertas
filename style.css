@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle, #ffffff 10%, transparent 11%),radial-gradient(circle at bottom left, #ffffff 5%, transparent 6%),radial-gradient(circle at bottom right, #ffffff 5%, transparent 6%),radial-gradient(circle at top left, #ffffff 5%, transparent 6%),radial-gradient(circle at top right, #ffffff 5%, transparent 6%);
+    background-size: 3em 3em;
+    background-color: #b2ece5;
+    opacity: 1
+}
+
+.carta-navidad {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 400px;
+    background: white;
+    padding: 15px;
+}
+
+.container-interior {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #fc4848;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 5px;
+}
+
+.container-interior h1 {
+    font-family: "Mountains Of Christmas";
+    text-align: center;
+    font-size: 4em;
+    line-height: 70px;
+    color: #fc4848;
+}
+
+.subtitulo {
+    display: none; /* Por defecto en none */
+    scale: 0; /* Por defecto en 0 */
+    position: absolute;
+    font-family: "Asap Condensed";
+    text-align: center;
+    color: rgb(60, 109, 38);
+    bottom: 20px;
+}
+
+.boton-cerrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #fe5353;
+    border-radius: 100%;
+}
+
+.boton-cerrar i {
+    scale: 1.8;
+}
+
+/* Animaciones */
+
+.animacion-carta {
+    transition: all 1s ease;   
+}
