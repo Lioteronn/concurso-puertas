@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>¡Feliz Navidad!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>¡Feliz Navidad!</title>
 </head>
+
 <body>
-    <div class="carta-navidad">
-        <div class="boton-cerrar">
-            <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
-        </div>
-        <div class="container-interior">
-            <h1>¡FELIZ NAVIDAD!</h1>
-        </div>
-        <h2 class="subtitulo">Los alumnos de 1º DAM les desean unas felices fiestas.</h2>
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">
+      <div class="inner">❅</div>
     </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+  </div>
+  <div class="carta-navidad">
+    <div class="boton-cerrar">
+      <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+    </div>
+    <div class="container-interior">
+      <h1>¡FELIZ NAVIDAD!</h1>
+    </div>
+    <div id="carousel-container">
+      <div id="image-slider">
+        <div class="slide"><img src="./imgs/1.jpg" alt="Imagen 1"></div>
+        <div class="slide"><img src="./imgs/2.jpg" alt="Imagen 2"></div>
+        <div class="slide"><img src="./imgs/3.jpg" alt="Imagen 3"></div>
+        <div class="slide"><img src="./imgs/4.jpg" alt="Imagen 3"></div>
+        <div class="slide"><img src="./imgs/5.jpg" alt="Imagen 3"></div>
+        <div class="slide"><img src="./imgs/6.jpg" alt="Imagen 3"></div>
+        <div class="slide"><img src="./imgs/7.jpg" alt="Imagen 3"></div>
+        <div class="slide"><img src="./imgs/8.jpg" alt="Imagen 3"></div>
 
+      </div>
 
+      <i class="fa-solid fa-circle-left" id="prev-btn" onclick="prevSlide()">
+        <div class="background-white"></div>
+      </i>
+      <i class="fa-solid fa-circle-right" id="next-btn" onclick="nextSlide()">
+        <div class="background-white"></div>
+      </i>
+    </div>
+    <h2 class="subtitulo">Los alumnos de 1º DAM les desean unas felices fiestas.</h2>
+  </div>
 
-    <script src="./app.js"></script>
-    <script src="https://kit.fontawesome.com/11335f0867.js" crossorigin="anonymous"></script>
+  <audio autoplay src="./audio/christmas-song.mp3" style="display: none;"></audio>
+
+  <script src="./app.js"></script>
+  <script src="https://kit.fontawesome.com/11335f0867.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

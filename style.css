@@ -8,18 +8,26 @@
 }
 
 body {
-    background: radial-gradient(circle, #ffffff 10%, transparent 11%),radial-gradient(circle at bottom left, #ffffff 5%, transparent 6%),radial-gradient(circle at bottom right, #ffffff 5%, transparent 6%),radial-gradient(circle at top left, #ffffff 5%, transparent 6%),radial-gradient(circle at top right, #ffffff 5%, transparent 6%);
+    /*background: radial-gradient(circle, #ffffff 10%, transparent 11%), radial-gradient(circle at bottom left, #ffffff 5%, transparent 6%), radial-gradient(circle at bottom right, #ffffff 5%, transparent 6%), radial-gradient(circle at top left, #ffffff 5%, transparent 6%), radial-gradient(circle at top right, #ffffff 5%, transparent 6%);
     background-size: 3em 3em;
     background-color: #b2ece5;
-    opacity: 1
+    opacity: 1*/
+    background-image: url("./imgs/background.jpg");
+    background-size: auto;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
 }
 
 .carta-navidad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 85%;
+    width: 333px;
     height: 400px;
     background: white;
     padding: 15px;
@@ -45,13 +53,15 @@ body {
 }
 
 .subtitulo {
-    display: none; /* Por defecto en none */
-    scale: 0; /* Por defecto en 0 */
+    display: none;
+    /* Por defecto en none */
+    scale: 0;
+    /* Por defecto en 0 */
     position: absolute;
     font-family: "Asap Condensed";
     text-align: center;
     color: rgb(60, 109, 38);
-    bottom: 20px;
+    bottom: 15px;
 }
 
 .boton-cerrar {
@@ -65,6 +75,7 @@ body {
     right: -15px;
     background: #fe5353;
     border-radius: 100%;
+    z-index: 10;
 }
 
 .boton-cerrar i {
@@ -74,5 +85,219 @@ body {
 /* Animaciones */
 
 .animacion-carta {
-    transition: all 1s ease;   
+    transition: all 1s ease;
+}
+
+/* Carrusel */
+#carousel-container {
+    position: absolute;
+    text-align: center;
+    scale: 0;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+    transform-origin: center;
+    border: 2px solid #fc4848;
+    opacity: 0;
+}
+
+#image-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.slide img {
+    height: 100%;
+    width: 100%;
+}
+
+#prev-btn,
+#next-btn {
+    position: absolute;
+    color: #fc4848;
+    border-radius: 100%;
+    background-size: 90%;
+    top: 195px;
+    scale: 2;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    z-index: 20;
+}
+
+#prev-btn {
+    left: 20px;
+}
+
+#next-btn {
+    right: 20px;
+}
+
+.background-white {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: 60%;
+    width: 60%;
+    background: white;
+    z-index: -5;
+}
+
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+}
+
+.snowflake,
+.snowflake .inner {
+    animation-iteration-count: infinite;
+    animation-play-state: running
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(110vh)
+    }
+}
+
+@keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(80px)
+    }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-shake;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out
+}
+
+.snowflake .inner {
+    animation-duration: 10s;
+    animation-name: snowflakes-fall;
+    animation-timing-function: linear
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    animation-delay: 0s
+}
+
+.snowflake:nth-of-type(0) .inner {
+    animation-delay: 0s
+}
+
+.snowflake:first-of-type {
+    left: 10%;
+    animation-delay: 1s
+}
+
+.snowflake:first-of-type .inner,
+.snowflake:nth-of-type(8) .inner {
+    animation-delay: 1s
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    animation-delay: .5s
+}
+
+.snowflake:nth-of-type(2) .inner,
+.snowflake:nth-of-type(6) .inner {
+    animation-delay: 6s
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    animation-delay: 2s
+}
+
+.snowflake:nth-of-type(11) .inner,
+.snowflake:nth-of-type(3) .inner {
+    animation-delay: 4s
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    animation-delay: 2s
+}
+
+.snowflake:nth-of-type(10) .inner,
+.snowflake:nth-of-type(4) .inner {
+    animation-delay: 2s
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    animation-delay: 3s
+}
+
+.snowflake:nth-of-type(5) .inner {
+    animation-delay: 8s
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    animation-delay: 2s
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    animation-delay: 1s
+}
+
+.snowflake:nth-of-type(7) .inner {
+    animation-delay: 2.5s
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    animation-delay: 0s
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    animation-delay: 1.5s
+}
+
+.snowflake:nth-of-type(9) .inner {
+    animation-delay: 3s
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    animation-delay: 0s
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    animation-delay: 2.5s
 }
